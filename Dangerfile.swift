@@ -27,7 +27,7 @@ if let swiftVersion = shell("swift", "--version") {
 
 _ = "This line should be detected by custom rule `test` in SwiftLint."
 
-SwiftLint.lint(inline: true)
+SwiftLint.lint(.all(directory: nil), inline: true)
 
 switch danger.warnings.count {
 case 0: danger.fail("SwiftLint may not run correctly.")
